@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>玉兰</title>
-    <link href="/2022/05/21/%E7%8E%89%E5%85%B0/"/>
-    <url>/2022/05/21/%E7%8E%89%E5%85%B0/</url>
+    <title>Spring的事务控制</title>
+    <link href="/2022/05/23/Spring%E7%9A%84%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"/>
+    <url>/2022/05/23/Spring%E7%9A%84%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/</url>
     
-    <content type="html"><![CDATA[<h1 id="杨杰傻逼"><a href="#杨杰傻逼" class="headerlink" title="杨杰傻逼"></a>杨杰傻逼</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="编程式事务控制相关对象"><a href="#编程式事务控制相关对象" class="headerlink" title="编程式事务控制相关对象"></a>编程式事务控制相关对象</h1><h3 id="TransactionDefinition"><a href="#TransactionDefinition" class="headerlink" title="TransactionDefinition"></a>TransactionDefinition</h3><h4 id="TransactionDefinition-是事务的定义信息对象，里面有如下方法"><a href="#TransactionDefinition-是事务的定义信息对象，里面有如下方法" class="headerlink" title="TransactionDefinition   是事务的定义信息对象，里面有如下方法"></a>TransactionDefinition   是事务的定义信息对象，里面有如下方法</h4><table><thead><tr><th>方法</th><th align="left">说明</th></tr></thead><tbody><tr><td>int getIsolationLevel()</td><td align="left">获得事务的隔离级别</td></tr><tr><td>int getPropogationBehavior()</td><td align="left">获得事务的传播行为</td></tr><tr><td>int getTimeout()</td><td align="left">获得超时时间</td></tr><tr><td>boolean isReadOnly()</td><td align="left">是否只读</td></tr></tbody></table><h3 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h3><h4 id="设置隔离级别，可以解决事务并发产生的问题，如脏读，不可重复读和虚读"><a href="#设置隔离级别，可以解决事务并发产生的问题，如脏读，不可重复读和虚读" class="headerlink" title="设置隔离级别，可以解决事务并发产生的问题，如脏读，不可重复读和虚读 "></a>设置隔离级别，可以解决事务并发产生的问题，如脏读，不可重复读和虚读<code> </code></h4><ul><li><p>ISOLATION_DEFAULT</p></li><li><p>ISOLATION_READ_UNCOMMITTED</p><ul><li>读未提交的</li></ul></li><li><p>ISOLATION_READ_COMMITTED</p><ul><li>读以提交的，可以用来解决脏读</li></ul></li><li><p>ISOLATION_REPEATABLE_READ</p><ul><li>可重复读，解决不可重复度</li></ul></li><li><p>ISOLATION_SERIALIZABLE</p><ul><li>都可以解决，但性能较低</li></ul></li></ul><h3 id="事务传播行为"><a href="#事务传播行为" class="headerlink" title="事务传播行为"></a>事务传播行为</h3><ul><li><p>REQUIRED:</p><ul><li>如果当前没有事务就新建一个事务，如果已经存在一个事务中，加入到这个事务中，一般选择的是默认值</li></ul></li><li><p>SUPPORTS:</p><ul><li>支持当前事务，如果当前没有事务，就以非事务方式执行(没有事务)</li></ul></li><li><p>MANDATORY:</p></li><li><p>REQUERS_NEW</p></li><li><p>NOT_SUPPORTED:</p></li><li><p>NEVER:</p></li><li><p>NESTED:</p></li></ul>]]></content>
     
     
     
